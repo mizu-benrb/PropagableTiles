@@ -6,5 +6,5 @@ using UnityEngine.Tilemaps;
 public class PRPTileAssociation: ScriptableObject
 {
     public TileBase Tile;
-    public List<IPRPTileAttribute> Attributes = new List<IPRPTileAttribute>();
+    [SerializeReference] public List<PRPTileAttribute> Attributes = new List<PRPTileAttribute>();
 }

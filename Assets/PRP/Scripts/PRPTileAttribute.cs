@@ -7,9 +7,10 @@ using UnityEngine;
 /// This interface defines the operations for dynamic tile attribute behavior.
 /// Implementations should only affect, touch data within the attribute or parent tile data.
 /// </remarks>
-public interface IPRPTileAttribute
+[System.Serializable]
+public abstract class PRPTileAttribute: ScriptableObject
 {
-    public void OnApply(PRPTileData tileData);
-    public void OnRemove(PRPTileData tileData);
-    public void OnTick(PRPTileData tileData);
+    public abstract void OnApply(PRPTileData tileData);
+    public abstract void OnRemove(PRPTileData tileData);
+    public abstract void OnTick(PRPTileData tileData);
 }
