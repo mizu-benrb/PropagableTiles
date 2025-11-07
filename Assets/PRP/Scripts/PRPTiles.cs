@@ -10,12 +10,12 @@ public class PRPTiles : MonoBehaviour
     [SerializeField] private Tilemap tilemap;
     [SerializeField] private PRPTileLibrary tileLibrary;
     
-    private Dictionary<Vector3Int,PRPTileData> _tilemapData = new Dictionary<Vector3Int,PRPTileData>(); 
+    public Dictionary<Vector3Int,PRPTileData> TilemapData = new Dictionary<Vector3Int,PRPTileData>(); 
     
     void Awake()
     {
         var bounds = tilemap.cellBounds;
-        // Check each all positions within the bounds of the given tilemap
+        // Check each of all positions within the bounds of the given tilemap
         foreach (var pos in bounds.allPositionsWithin)
         {
             TileBase tile = tilemap.GetTile(pos);
@@ -27,7 +27,7 @@ public class PRPTiles : MonoBehaviour
                 print("No tile association for tile " + tile.name + "at position " + pos + " !");
                 continue;
             }
-            _tilemapData[pos] = new PRPTileData(pos, tileAssociation.Attributes);
+            TilemapData[pos] = new PRPTileData(pos, tileAssociation.Attributes);
         }
     }
 }

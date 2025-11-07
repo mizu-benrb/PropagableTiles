@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69a8d7f538cee34baef7e6e0a5136b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PRPTiles
-  tilemap: {fileID: 0}
+  tilemap: {fileID: 37267546}
   tileLibrary: {fileID: 0}
 --- !u!1 &797755746
 GameObject:

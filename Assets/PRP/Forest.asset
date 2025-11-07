@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Forest
   m_EditorClassIdentifier: Assembly-CSharp::PRPTileAssociation
   Tile: {fileID: 0}
+  Attributes:
+  - {fileID: 0}
