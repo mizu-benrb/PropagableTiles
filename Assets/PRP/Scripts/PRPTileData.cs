@@ -11,7 +11,7 @@ using UnityEngine.Tilemaps;
 [System.Serializable]
 public class PRPTileData
 {
-    public string tileName;
+    public string baseType;
     public TileBase tile;
     public Vector3Int gridPosition;
     public List<IEntity> Entities = new List<IEntity>();

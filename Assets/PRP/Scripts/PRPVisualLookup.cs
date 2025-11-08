@@ -9,10 +9,11 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(fileName = "PRPVisualLookup", menuName = "PRP/VisualLookup")]
 public class PRPVisualLookup : ScriptableObject
 {
+    // Future avenue: Add priority order
     [System.Serializable]
     public class VisualRule
     {
-        public string baseName;
+        public string baseType;
         public string attributeKey;
         public TileBase tileAsset;
     }
@@ -25,12 +26,19 @@ public class PRPVisualLookup : ScriptableObject
         visualRuleLookup = new Dictionary<(string, string), TileBase>();
         foreach (var rule in visualRules)
         {
-            visualRuleLookup.Add((rule.baseName, rule.attributeKey), rule.tileAsset);
+            visualRuleLookup.Add((rule.baseType, rule.attributeKey), rule.tileAsset);
         }
     }
 
-    public bool TryGetTile(string baseName, string attributeKey, out TileBase tile)
+    /// <summary>
+    /// Tries to get a tile for specified tile base type, attribute combo.
+    /// </summary>
+    /// <param name="baseType">The base type for a tile.</param>
+    /// <param name="attributeKey">The name of a given attribute.</param>
+    /// <param name="tile">If successful, the tile asset corresponding to the base type and attribute.</param>
+    /// <returns>True if (base, attribute) combo defined as corresponding with tile, false otherwise.</returns>
+    public bool TryGetTile(string baseType, string attributeKey, out TileBase tile)
     {
-        return visualRuleLookup.TryGetValue((baseName, attributeKey), out tile);
+        return visualRuleLookup.TryGetValue((baseType, attributeKey), out tile);
     }
 }
