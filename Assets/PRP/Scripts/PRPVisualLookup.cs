@@ -2,6 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+/// <summary>
+/// Lookup table linking base tile types, attribute key combos to TileBase assets
+/// Used to define the visual asepct of tile transformations
+/// </summary>
 [CreateAssetMenu(fileName = "PRPVisualLookup", menuName = "PRP/VisualLookup")]
 public class PRPVisualLookup : ScriptableObject
 {

@@ -16,7 +16,7 @@ public class PRPTileUpdater : MonoBehaviour
     /// Updates every tile in the referenced PRPTiles asset.
     /// Future avenue: Do the work in this function in parallel via Jobs
     /// </summary>
-    private void UpdateTiles()
+    private void UpdateTilemap()
     {
         foreach (var tile in tilemap.TilemapData)
         {
@@ -27,5 +27,13 @@ public class PRPTileUpdater : MonoBehaviour
                 //  Invoke visual updater functions here
             }
         }
+    }
+
+    private void AddTileAttribute(PRPTileData tileData, PRPTileAttribute attribute)
+    {   
+        tileData.attributes.Add(attribute);
+        attribute.OnApply(tileData);
+        
+        // Invoke visual updater functions here
     }
 }

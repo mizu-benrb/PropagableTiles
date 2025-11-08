@@ -10,6 +10,8 @@ using UnityEngine;
 [System.Serializable]
 public abstract class PRPTileAttribute: ScriptableObject
 {
+    public string attributeName;
+    
     public abstract void OnApply(PRPTileData tileData);
     public abstract void OnRemove(PRPTileData tileData);
     public abstract void OnTick(PRPTileData tileData);
