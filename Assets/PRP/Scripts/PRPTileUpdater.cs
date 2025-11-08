@@ -20,7 +20,7 @@ public class PRPTileUpdater : MonoBehaviour
     {
         foreach (var tile in tilemap.TilemapData)
         {
-            foreach (var attr in tile.Value.Attributes)
+            foreach (var attr in tile.Value.attributes)
             {
                 attr.OnTick(tile.Value);
                 

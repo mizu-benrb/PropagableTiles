@@ -11,26 +11,27 @@ using UnityEngine.Tilemaps;
 [System.Serializable]
 public class PRPTileData
 {
-    public TileBase Tile;
-    public Vector3Int GridPosition;
+    public string tileName;
+    public TileBase tile;
+    public Vector3Int gridPosition;
     public List<IEntity> Entities = new List<IEntity>();
-    public List<PRPTileAttribute> Attributes;
+    public List<PRPTileAttribute> attributes;
     
     public PRPTileData(Vector3Int gridPosition)
     {
-        this.GridPosition = gridPosition;
+        this.gridPosition = gridPosition;
     }
     
     public PRPTileData(Vector3Int gridPosition, List<PRPTileAttribute> attributes)
     {
-        this.GridPosition = gridPosition;
-        this.Attributes = attributes;
+        this.gridPosition = gridPosition;
+        this.attributes = attributes;
     }
     
     public PRPTileData(Vector3Int gridPosition, List<PRPTileAttribute> attributes, List<IEntity> entities)
     {
-        this.GridPosition = gridPosition;
-        this.Attributes = attributes;
+        this.gridPosition = gridPosition;
+        this.attributes = attributes;
         this.Entities = entities;
     }
 }
