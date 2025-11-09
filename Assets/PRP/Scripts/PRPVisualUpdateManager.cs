@@ -7,6 +7,7 @@ public class PRPVisualUpdateManager : MonoBehaviour
     [SerializeField] private Tilemap tilemap;
     [SerializeField] private PRPVisualLookup visualLookup;
 
+    // Uhhhhh gotta fill this in, probably awake which initializes 
     private Dictionary<Vector3Int, string> currentVisualStateLookup = new();
 
     public void UpdateVisual(PRPTileData tileData, string attributeKey)

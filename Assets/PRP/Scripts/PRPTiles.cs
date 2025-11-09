@@ -30,4 +30,15 @@ public class PRPTiles : MonoBehaviour
             TilemapData[pos] = new PRPTileData(pos, tileAssociation.Attributes);
         }
     }
+
+    /// <summary>
+    /// Returns the logical data of a tile based on position within tilemap.
+    /// Intended to be used for input, UI interactions.
+    /// </summary>
+    /// <param name="pos">Vector 3 integer position of tile within tilemap.</param>
+    /// <returns>The logical data of the tile at pos.</returns>
+    public PRPTileData GetTileData(Vector3Int pos)
+    {
+        return TilemapData[pos];
+    }
 }
