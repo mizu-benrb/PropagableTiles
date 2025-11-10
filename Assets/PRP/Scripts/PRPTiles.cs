@@ -10,7 +10,20 @@ public class PRPTiles : MonoBehaviour
     [SerializeField] private Tilemap tilemap;
     [SerializeField] private PRPTileLibrary tileLibrary;
     
-    public Dictionary<Vector3Int,PRPTileData> TilemapData = new Dictionary<Vector3Int,PRPTileData>(); 
+    public Dictionary<Vector3Int,PRPTileData> TilemapData = new Dictionary<Vector3Int,PRPTileData>();
+
+    void OnValidate()
+    {
+        if (tilemap == null)
+        {
+            tilemap = GetComponent<Tilemap>();
+        }
+
+        if (tileLibrary == null)
+        {
+            Debug.LogError("PRP Tile Library Not Assigned in Inspector!");
+        }
+    }
     
     void Awake()
     {
